@@ -1,0 +1,8 @@
+# Build sources and backups (not part of the published site)
+_local/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
