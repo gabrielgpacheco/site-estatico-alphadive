@@ -162,38 +162,6 @@ As URLs antigas continuam funcionando por meio de stubs de redirect:
 
 ---
 
-## Deploy
-
-1. Push da branch `main` para o GitHub.
-2. GitHub Pages configurado para servir a raiz do repositório.
-3. `CNAME` com `alphadive.com.br` e `.nojekyll` na raiz.
-4. Na Cloudflare, registros **DNS only**:
-   - quatro `A` na raiz para `185.199.108-111.153`;
-   - quatro `AAAA` para `2606:50c0:8000-8003::153`;
-   - `CNAME www` para `gabrielgpacheco.github.io`.
-5. Certificado Let's Encrypt emitido automaticamente pelo GitHub Pages.
-6. "Enforce HTTPS" ativado.
-
----
-
-## Rodando localmente
-
-O artefato publicado não exige build. Para visualizar:
-
-```bash
-python -m http.server 8090
-```
-
-Depois abra http://127.0.0.1:8090/.
-
-Para regerar o `index.html` a partir das fontes locais:
-
-```bash
-python _local/build_site.py
-```
-
----
-
 ## QA
 
 - Verificação de assets no build: 0 faltantes.
@@ -211,16 +179,6 @@ python _local/build_site.py
   <img src="docs/images/depoimentos.webp" alt="Seção de depoimentos" width="49%">
   <img src="docs/images/mobile.webp" alt="Versão mobile" width="24%">
 </p>
-
----
-
-## Próximos passos
-
-- Podar assets não utilizados de plugins para reduzir o tamanho do repositório.
-- Migrar o e-mail, que ainda depende da hospedagem antiga.
-- Avaliar imagens em WebP/AVIF.
-- Ajustar contraste dos depoimentos.
-- Opcionalmente, habilitar o proxy da Cloudflare com SSL/TLS em **Full (strict)**.
 
 ---
 
